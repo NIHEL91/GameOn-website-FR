@@ -74,6 +74,43 @@ img {
   color: #ff0000;
 
 }
+@media screen and (max-width: 768px) {
+  
+  .logo {
+    float: left;
+    width: 103px;
+    height: 19px;
+  }
+  .topnav {
+    overflow: hidden;
+    margin: 30px;
+    margin-top:30px;
+  }
+  
+  .topnav a {
+  display: none;
+}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .icon {
+    display: block;
+  }
+
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
 
 
 /*corriger le menu burger*/
@@ -114,6 +151,7 @@ img {
     display: block;
     text-align: left;
   }
+}
 
   .topnav a {display: none;}
   .topnav a.icon {
@@ -133,13 +171,12 @@ img {
 	  overflow: hidden;
     padding-right: 30px;
     width: 100%;
-    height: 30%;
-  }
+    height: 30%;  }
  .active {
   background-color: #e14c4c73;
   border-radius: 5px;
  }
-} 
+
 
 main {
   font-size: 130%;
@@ -214,16 +251,16 @@ main {
   width: 100%;
   overflow: auto;
 }
-/*.bground2 {
+.bground2 {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
   overflow: auto;
-}*/
+}
 
 .content{
   margin: 5% auto;
@@ -252,7 +289,7 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
-  /*height: 850px;*/
+  height: 850px;
 
 }
 
@@ -501,7 +538,7 @@ input[data-error]::after {
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
   text-decoration: none;
-  width: 1239px;
+ /* width: 1239px;*/
 }
 .hero-content {
   padding: 51px 67px;
@@ -579,13 +616,13 @@ footer {
   }
    .bground {
     margin-top: 79px;
-    /*position: absolute;*/
+    position: absolute;
     height: auto;
 
   }
-  /*.content {
+  .content {
     height: 100%;
-  }*/
+  }
   .hero-content {
     background: #fff;
     color: #000;
