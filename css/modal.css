@@ -116,43 +116,7 @@ img {
 /*corriger le menu burger*/
 
  @media screen and (max-width: 768px) {
-  
-  .logo {
-    float: left;
-    width: 103px;
-    height: 19px;
-  }
-  .topnav {
-    overflow: hidden;
-    margin: 30px;
-    margin-top:30px;
-  }
-  
-  .topnav a {
-  display: none;
-}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-  .icon {
-    display: block;
-  }
-
-
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
+ 
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -176,7 +140,7 @@ img {
   background-color: #e14c4c73;
   border-radius: 5px;
  }
-
+} 
 
 main {
   font-size: 130%;
@@ -251,6 +215,8 @@ main {
   width: 100%;
   overflow: auto;
 }
+
+
 .bground2 {
   display: none;
   position: absolute;
@@ -261,8 +227,7 @@ main {
   width: 100%;
   overflow: auto;
 }
-
-.content{
+.content {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -292,12 +257,10 @@ main {
   height: 850px;
 
 }
-
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
 }
-
 
 label {
   font-family: var(--font-default);
@@ -443,8 +406,8 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
   width: 199px;
+  padding:15px;
 }
-
 .btn-submit,
 .btn-signup {
   background: #fe142f;
@@ -456,6 +419,7 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
   width: 199px;
+  padding: 15px;
 }
 /* custom select styles */
 .custom-select {
@@ -538,7 +502,6 @@ input[data-error]::after {
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
   text-decoration: none;
- /* width: 1239px;*/
 }
 .hero-content {
   padding: 51px 67px;
