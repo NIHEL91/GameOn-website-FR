@@ -29,6 +29,8 @@ function formSubmit(event){
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  modalbg.scrollIntoView({ behavior: "smooth" });
+
 }
 // launch modal message
 function launchModal2() {
