@@ -36,7 +36,6 @@ function launchModal() {
 function launchModal2() {
   modalbg2.style.display = "block";
 }
-
 function closeModal() {
   modalbg.style.display = "none";
 }
@@ -47,62 +46,57 @@ function closeModal2() {
 //validation formulaire
  
 function validate() {
+  let email = document.getElementById('email').value;
   let first = document.getElementById('first').value;
   let last = document.getElementById('last').value;
   let birthdate = document.getElementById('birthdate').value;
   let quantity = document.getElementById('quantity').value;
   let checkbox1 = document.getElementById('checkbox1').checked;
+  let localisation = document.getElementById('checkbox2').checked;
+
+
   // Sélection des éléments d'erreur
   const errorMessages = document.querySelectorAll('.error');
   
-    // Réinitialiser les messages d'erreur
-    errorMessages.forEach(error => error.style.display = 'none');
+  // Réinitialiser les messages d'erreur
+  errorMessages.forEach(error => error.style.display = 'none');
   
-    // Réinitialiser les bordures rouges
-  /*document.querySelectorAll('.text-control').forEach(input => {
-    input.classList.remove('error-border');
-  });*/
+  // Réinitialiser les bordures rouges
   document.querySelectorAll('.text-control').forEach(input => {
-    input.style.border = 'none'; 
-  });//;
-
-
+  input.style.border = 'none'; 
+  });
+  //Réinitialiser les champs de formulaire
+  document.getElementById('inscription').addEventListener('click', function() {
+    resetForm();
+  });
   // Vérifier que les champs obligatoires ne sont pas vides
 
   let isValid = true;
 
-    let email = document.getElementById('email').value;
 
-      const regex = /^[^.\-].*@[a-z0-9.-]+\.[a-z]{2,}$/;         
+  const regex = /^[^.\-].*@[a-z0-9.-]+\.[a-z]{2,}$/;         
 
       if (!regex.test(email)) {
         document.getElementById('errorEmail').style.display = 'block';
         document.getElementById('email').style.border = '2px solid red'; // Applique la bordure rouge
-
-
         isValid = false;
-
       }
+
       if (first ==="") {
         document.getElementById('errorFirst').style.display = 'block';
         document.getElementById('first').style.border = '2px solid red'; // Applique la bordure rouge
         isValid = false;
-
-
       }
-      if (last ==="") {
+    
+      if (last === ''|| last < 2) {
         document.getElementById('errorLast').style.display = 'block';
         document.getElementById('last').style.border = '2px solid red'; // Applique la bordure rouge
         isValid = false;
-
       }
 
-
-      if (last ==="") {
-        document.getElementById('errorLast').style.display = 'block';
-        document.getElementById('last').style.border = '2px solid red'; // Applique la bordure rouge
-        isValid = false;
-
+      if (!birthdate) {
+        document.getElementById('errorBirthdate').style.display = 'block';
+        document.getElementById('birthdate').style.border = '2px solid red';
       }
 
       if (quantity === '' || isNaN(quantity) || quantity < 0 || quantity > 99) {
@@ -111,11 +105,31 @@ function validate() {
         isValid = false;
       }
 
+      if (!checkbox1) {
+        document.getElementById('errorCheckbox1').style.display = 'block';
+      }
+
+     
+
        else {
         if (isValid) {
         closeModal();
         launchModal2();
+        resetForm();
 
+
+      }
+      //rénisialisation des champs
+      function resetForm() {
+        const form = document.getElementById('myForm');
+        form.reset();
+      
+        // Réinitialiser les messages d'erreur 
+        const errorMessages = document.querySelectorAll('.error');
+        errorMessages.forEach(error => error.style.display = 'none');
+      
+        const labels = document.querySelectorAll('.text-label');
+        labels.forEach(label => label.classList.remove('text-label'));
       }
 }}
       
