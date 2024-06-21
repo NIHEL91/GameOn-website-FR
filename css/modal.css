@@ -184,9 +184,10 @@ main {
 
 .error {
   color: red;
-  font-size: 0.9em;
+  font-size: 10px;
   margin-top: 5px;
   display: none; /* Masquer par défaut */
+
 }
 
 .button {
@@ -317,6 +318,10 @@ input {
   font-size: 20px;
   height: 48px;
 }
+.error-border {
+  border: 2px solid red;
+}
+ 
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -453,7 +458,7 @@ input[data-error]::after {
   padding: 15px 23px;
   position: absolute;
   top: 650px;
-  left: 160px;
+  left: 165px;
 }/*******/
 /* custom select styles */
 .custom-select {

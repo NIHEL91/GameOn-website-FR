@@ -49,16 +49,76 @@ function closeModal2() {
 function validate() {
   let first = document.getElementById('first').value;
   let last = document.getElementById('last').value;
-  let email = document.getElementById('email').value;
   let birthdate = document.getElementById('birthdate').value;
-  let location = document.querySelector('input[name="location"]:checked');
+  let quantity = document.getElementById('quantity').value;
   let checkbox1 = document.getElementById('checkbox1').checked;
+  // Sélection des éléments d'erreur
+  const errorMessages = document.querySelectorAll('.error');
   
-  // Vérifier que les champs obligatoires ne sont pas vides
-  if (first.length > 2 || last.length > 2 || email === '' || birthdate === '' || !location || !checkbox1) {
-    }
-      closeModal();
-      launchModal2();
+    // Réinitialiser les messages d'erreur
+    errorMessages.forEach(error => error.style.display = 'none');
+  
+    // Réinitialiser les bordures rouges
+  /*document.querySelectorAll('.text-control').forEach(input => {
+    input.classList.remove('error-border');
+  });*/
+  document.querySelectorAll('.text-control').forEach(input => {
+    input.style.border = 'none'; 
+  });//;
 
-  // Si la validation est réussie, afficher la fenêtre modale
-}
+
+  // Vérifier que les champs obligatoires ne sont pas vides
+
+  let isValid = true;
+
+    let email = document.getElementById('email').value;
+
+      const regex = /^[^.\-].*@[a-z0-9.-]+\.[a-z]{2,}$/;         
+
+      if (!regex.test(email)) {
+        document.getElementById('errorEmail').style.display = 'block';
+        document.getElementById('email').style.border = '2px solid red'; // Applique la bordure rouge
+
+
+        isValid = false;
+
+      }
+      if (first ==="") {
+        document.getElementById('errorFirst').style.display = 'block';
+        document.getElementById('first').style.border = '2px solid red'; // Applique la bordure rouge
+        isValid = false;
+
+
+      }
+      if (last ==="") {
+        document.getElementById('errorLast').style.display = 'block';
+        document.getElementById('last').style.border = '2px solid red'; // Applique la bordure rouge
+        isValid = false;
+
+      }
+
+
+      if (last ==="") {
+        document.getElementById('errorLast').style.display = 'block';
+        document.getElementById('last').style.border = '2px solid red'; // Applique la bordure rouge
+        isValid = false;
+
+      }
+
+      if (quantity === '' || isNaN(quantity) || quantity < 0 || quantity > 99) {
+        document.getElementById('errorQuantity').style.display = 'block';
+        document.getElementById('quantity').style.border = '2px solid red';
+        isValid = false;
+      }
+
+       else {
+        if (isValid) {
+        closeModal();
+        launchModal2();
+
+      }
+}}
+      
+
+      
+  
