@@ -16,22 +16,21 @@
     <div class="topnav" id="myTopnav">
      
       <div class="header-logo">
-        
         <img  class="logo" alt="logo" src="./images/Logo.png" width="auto" height="auto" />
       </div>
 
-    <div class="main-navbar">
-      <div class="active">
-        <a href="#"><span class="nav__link">Détails de l'évènement</span></a>
-        <a href="#"><span class="nav__link">À propos</span></a>
-        <a href="#"><span class="nav__link">Contact</span></a>
-        <a href="#"><span class="nav__link">Évènements passés</span></a>
-        <a href="javascript:void(0);" class="icon" onclick="editNav()">
-          <i class="fa fa-bars"></i>
-        </a>
+      <div class="main-navbar">
+        <div class="active">
+          <a href="#"><span class="nav__link">Détails de l'évènement</span></a>
+          <a href="#"><span class="nav__link">À propos</span></a>
+          <a href="#"><span class="nav__link">Contact</span></a>
+          <a href="#"><span class="nav__link">Évènements passés</span></a>
+          <a href="javascript:void(0);" class="icon" onclick="editNav()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
     <main>
       <div class="hero-section">
@@ -44,20 +43,22 @@
               Vous aimez jouer ? Notre prochain évènement gaming est ouvert
               aux réservations... Places limitées !
             </p>
-            
+            <button class="btn-signup modal-btn btn-destkop" id="inscription">
+              je m'inscris
+            </button>
         </div>
         <div class="hero-img">
+          <img src="./images/bg_img.jpg" alt="img" />
         </div>
-        <div class="btn-wrapper">
-          <button class="btn-signup modal-btn" id="inscription">
-            je m'inscris
-          </button>
-        </div>
+        <button class="btn-signup modal-btn btn-mobile" >
+          je m'inscris
+        </button>
+      
       </div>
 
       <div class="bground">
         <div class="content">
-          <span class="close"></span>
+          <span class="closeStar"></span>
           <div class="modal-body">
             <form id="myForm">
               <div class="formData">
@@ -87,8 +88,8 @@
                   <span class="error" id="errorQuantity">Veuillez entrer un chiffre.</span>
                 </div>
 
-                <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-                <div class="formData">             
+                <div class="formData"> 
+                  <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
                   <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
                   <label class="text-label" class="checkbox-label" for="location1">
                     <span class="checkbox-icon"></span>
@@ -153,7 +154,7 @@
 
       <div class="bground2" id="myModal" >
         <div class="content2">
-          <span class="close"></span>
+          <span class="closeStar"></span>
           <div class="modal-content">
             <h2>Merci pour votre inscription</h2>
             <button id="closeButton">Fermer </button>
